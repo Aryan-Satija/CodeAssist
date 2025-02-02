@@ -8,6 +8,7 @@ import Focus from "./focus";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "../index.css";
+import Read from "./read";
 interface props{
     setChat : Dispatch<SetStateAction<{text: string, sender: string}[]>>,
     setMode: Dispatch<SetStateAction<number>>,
@@ -150,21 +151,7 @@ const Header = ({setChat, setMode, setText, setPlaceholder, setSession}: props) 
           </Tooltip.Provider>
         </div>
         <div className="hidden md:block hover:scale-125 duration-200">
-          <Tooltip.Provider>
-            <Tooltip.Root>
-              <Tooltip.Trigger asChild>
-                <button onClick={() => {}}>
-                  <BookOpenText />
-                </button>
-              </Tooltip.Trigger>
-              <Tooltip.Portal>
-                <Tooltip.Content className="TooltipContent" sideOffset={5}>
-                  <div className="opacity-100">Read (Coming Soon)</div>
-                  <Tooltip.Arrow className="TooltipArrow" />
-                </Tooltip.Content>
-              </Tooltip.Portal>
-            </Tooltip.Root>
-          </Tooltip.Provider>
+            <Read rating={rating}/>
         </div>
         <div className="hidden md:block hover:scale-125 duration-200">
           <Tooltip.Provider>
