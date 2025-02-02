@@ -17,7 +17,20 @@ exports.fetchBlogs = async(req, res)=>{
         })
     }
 }
-
+exports.fetchAllBlogs = async(req, res)=>{
+    try{
+        const blogs = await Blogs.find();
+        return res.status(200).json({
+            success: true,
+            data: blogs
+        })
+    } catch(err){
+        return res.status(200).json({
+            success: false,
+            message: 'something went wrong'
+        })
+    }
+}
 exports.fetchBlogsByTopics = async(req, res)=>{
     try{
         const {topics} = req.body;
