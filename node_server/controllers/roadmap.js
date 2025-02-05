@@ -1,7 +1,7 @@
 const data = require('../roadmap.json');
 exports.Roadmap = async(req, res) => { 
     try{
-        const {rating} = req.body;
+        const rating = req.body.lc_rating;
         const roadmap = [];
         data.forEach((item) => {
             if(rating >= item.min && rating <= item.max){

@@ -259,48 +259,91 @@
         ]
     },
     {
-        "topic": "dynamic-programming",
+        "topic": "number-theory",
         "min": 1500,
-        "max": 5000,
-        "p": 25,
+        "max": 2300,
+        "p": 7,
         "subtopics": [
             {
-                "name": "Introduction to Dynamic Programming",
+                "name": "Basic Number Theory Concepts",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             },
             {
-                "name": "Memoization vs Tabulation",
+                "name": "Greatest Common Divisor (GCD) and LCM",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             },
             {
-                "name": "Longest Increasing Subsequence",
+                "name": "Modular Arithmetic",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             },
             {
-                "name": "Knapsack Problem",
+                "name": "Fermat’s Theorem & Euler’s Totient Function",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             },
             {
-                "name": "DP on Trees",
+                "name": "Prime Factorization and Sieve of Eratosthenes",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             },
             {
-                "name": "DP with Bitmasking",
+                "name": "Chinese Remainder Theorem",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             },
             {
-                "name": "Sequence Alignment",
+                "name": "Number Theory in Cryptography",
                 "min": 1500,
-                "max": 5000
+                "max": 2300
             }
         ]
     },
+    {
+        "topic": "game-theory",
+        "min": 1600,
+        "max": 2300,
+        "p": 7,
+        "subtopics": [
+            {
+                "name": "Introduction to Game Theory",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Nim Game and Grundy Numbers",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Sprague-Grundy Theorem",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Impartial vs Partisan Games",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Minimax Algorithm",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Dynamic Programming in Game Theory",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Game Theory in Competitive Programming",
+                "min": 1600,
+                "max": 2300
+            }
+        ]
+    },    
     {
         "topic": "graph",
         "min": 1200,
@@ -405,89 +448,46 @@
         ]
     },
     {
-        "topic": "number-theory",
+        "topic": "dynamic-programming",
         "min": 1500,
-        "max": 2300,
-        "p": 7,
+        "max": 5000,
+        "p": 25,
         "subtopics": [
             {
-                "name": "Basic Number Theory Concepts",
+                "name": "Introduction to Dynamic Programming",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             },
             {
-                "name": "Greatest Common Divisor (GCD) and LCM",
+                "name": "Memoization vs Tabulation",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             },
             {
-                "name": "Modular Arithmetic",
+                "name": "Longest Increasing Subsequence",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             },
             {
-                "name": "Fermat’s Theorem & Euler’s Totient Function",
+                "name": "Knapsack Problem",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             },
             {
-                "name": "Prime Factorization and Sieve of Eratosthenes",
+                "name": "DP on Trees",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             },
             {
-                "name": "Chinese Remainder Theorem",
+                "name": "DP with Bitmasking",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             },
             {
-                "name": "Number Theory in Cryptography",
+                "name": "Sequence Alignment",
                 "min": 1500,
-                "max": 2300
+                "max": 5000
             }
         ]
-    },
-    {
-        "topic": "game-theory",
-        "min": 1600,
-        "max": 2300,
-        "p": 7,
-        "subtopics": [
-            {
-                "name": "Introduction to Game Theory",
-                "min": 1600,
-                "max": 2300
-            },
-            {
-                "name": "Nim Game and Grundy Numbers",
-                "min": 1600,
-                "max": 2300
-            },
-            {
-                "name": "Sprague-Grundy Theorem",
-                "min": 1600,
-                "max": 2300
-            },
-            {
-                "name": "Impartial vs Partisan Games",
-                "min": 1600,
-                "max": 2300
-            },
-            {
-                "name": "Minimax Algorithm",
-                "min": 1600,
-                "max": 2300
-            },
-            {
-                "name": "Dynamic Programming in Game Theory",
-                "min": 1600,
-                "max": 2300
-            },
-            {
-                "name": "Game Theory in Competitive Programming",
-                "min": 1600,
-                "max": 2300
-            }
-        ]
-    }    
+    }
 ]

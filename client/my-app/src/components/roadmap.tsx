@@ -3,12 +3,17 @@ import { Timeline, Modal } from 'antd';
 import {Network} from 'lucide-react';
 import * as Tooltip from "@radix-ui/react-tooltip";
 import axios from 'axios';
+import { MindMap, type MindMapOptions } from '@ant-design/graphs';
+
 interface timelineObj{
-    children: String
+  id: string,
+  children: timelineObj[]
 }
+
 interface props {
   rating: Number | null
 }
+
 const Roadmap: React.FC<props> = ({rating}) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -21,14 +26,11 @@ const Roadmap: React.FC<props> = ({rating}) => {
   const roadMap = async()=>{
     try{
         console.log("pls wait");
-        const response = await axios.post(`${nodeBase}/roadmap/roadmap`, {
-            lc_rating: rating
+        const response = await axios.post(`${nodeBase}/roadmap/v2/roadmap`, {
+            rating: rating
         });
-        setTimeline(response.data.data.map((top : String) => {
-            return {
-                children: top
-            }
-        }));
+        console.log(response);
+        setTimeline(response.data.data);
         setOpen(true);
     } catch(err){
         console.log(err);
@@ -43,7 +45,16 @@ const Roadmap: React.FC<props> = ({rating}) => {
     console.log('Clicked cancel button');
     setOpen(false);
   };
-
+  const data = {
+    id: "Roadmap",
+    children: timeline
+  }
+  const options: MindMapOptions = {
+    autoFit: 'view',
+    data,
+    width:1400,
+    animation: true,
+  };
   return (
     <>
       <Tooltip.Provider>
@@ -68,13 +79,19 @@ const Roadmap: React.FC<props> = ({rating}) => {
         open={open}
         onOk={handleOk}
         confirmLoading={confirmLoading}
-        onCancel={handleCancel} 
+        onCancel={handleCancel}
+        width="100%"
+        style={{ 
+          top: 0, 
+          padding: 0, 
+          maxWidth: '100vw', 
+          position: 'relative',
+        }}
+        bodyStyle={{ height: '84vh', overflow: 'hidden' }}
       >
-        <p className='mt-16'>
-            <Timeline
-                items={timeline}
-            />
-        </p>
+        <>
+          <MindMap {...options} type="boxed"/>
+        </>
       </Modal>
     </>
   );
