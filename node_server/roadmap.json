@@ -1,170 +1,493 @@
 [
     {
+        "topic": "simulation",
         "min": 0,
         "max": 1200,
-        "topic": "simulation", 
-        "p" : 5
+        "subtopics": [
+            {"name": "brute-force", "min": 0, "max": 1200},
+            {"name": "state-tracking", "min": 1000, "max": 1200}
+        ],
+        "p": 5
     },
     {
-        "min": 0,
-        "max": 1200,
         "topic": "math",
-        "p" : 15 
-    },
-    {
         "min": 0,
         "max": 1200,
+        "subtopics": [
+            {"name": "gcd-lcm", "min": 0, "max": 1200},
+            {"name": "modular-arithmetic", "min": 1000, "max": 1200},
+            {"name": "primes", "min": 0, "max": 1200}
+        ],
+        "p": 15
+    },
+    {
         "topic": "array",
-        "p" : 15 
-    },
-    {
         "min": 0,
         "max": 1200,
+        "subtopics": [
+            {"name": "Searching Algorithms", "min": 0, "max": 1200},
+            {"name": "Sorting Algorithms", "min": 0, "max": 1200},
+            {
+                "name": "Traversal Algorithms", "min": 0, "max": 1200,
+                "subtopics": [
+                    {"name": "Iterative", "min": 0, "max": 1200},
+                    {"name": "Recursive", "min": 0, "max": 1200}
+                ]
+            }
+        ],
+        "p": 15
+    },
+    {
         "topic": "two-pointers",
-        "p" : 10 
-    },
-    {
         "min": 0,
         "max": 1200,
+        "subtopics": [
+            {"name": "two-pointer on arrays", "min": 1000, "max": 1200},
+            {"name": "two-pointer on Linked List", "min": 1200, "max": 1200}
+        ],
+        "p": 10
+    },
+    {
         "topic": "prefix-sum",
-        "p" : 10 
-    },
-    {
-        "min": 1000,
-        "max": 1300,
-        "topic": "sliding-window", 
-        "p" : 10
-    },
-    {
         "min": 0,
         "max": 1200,
+        "subtopics": [
+            {"name": "cumulative-sum", "min": 0, "max": 1200},
+            {"name": "difference-array", "min": 1000, "max": 1200}
+        ],
+        "p": 10
+    },
+    {
         "topic": "linked-list",
-        "p" : 10
-    },
-    {
         "min": 0,
         "max": 1200,
-        "topic": "matix",
-        "p" : 10 
+        "subtopics": [
+            {"name": "singly linked list", "min": 0, "max": 1200},
+            {"name": "doubly linked list", "min": 0, "max": 1200},
+            {"name": "circular linked list", "min": 0, "max": 1200},
+            {"name": "fast-slow-pointer", "min": 1000, "max": 1200},
+            {"name": "merge-sort-on-linkedlist", "min": 1000, "max": 1200}
+        ],
+        "p": 10
     },
     {
+        "topic": "matrix",
         "min": 0,
         "max": 1200,
+        "p": 10,
+        "subtopics": [
+            {
+                "name": "Matrix representation and notation",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Matrix operations (addition, subtraction, multiplication)",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Matrix transpose, inversion, and determinant",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Eigenvalues and eigenvectors",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Sparse matrices and optimization techniques",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Matrix traversal and search algorithms",
+                "min": 0,
+                "max": 1200
+            }
+        ]
+    },
+    {
         "topic": "recursion",
-        "p" : 5
-    },
-    {
         "min": 0,
         "max": 1200,
+        "p": 5,
+        "subtopics": [
+            {
+                "name": "Understanding recursion: base case and recursive case",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Recursive vs iterative approaches",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Common recursive algorithms (factorial, Fibonacci, tree traversals)",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Debugging recursive functions and avoiding stack overflow",
+                "min": 0,
+                "max": 1200
+            }
+        ]
+    },
+    {
         "topic": "backtracking",
-        "p" : 5 
-    },
+        "min": 0,
+        "max": 1200,
+        "p": 5,
+        "subtopics": [
+            {
+                "name": "Introduction to backtracking algorithms",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Recursive backtracking techniques",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Classic problems (N-Queens, Sudoku, maze solving)",
+                "min": 0,
+                "max": 1200
+            },
+            {
+                "name": "Pruning strategies and optimization methods",
+                "min": 0,
+                "max": 1200
+            }
+        ]
+    },   
     {
-        "min": 1200,
-        "max": 1400,
         "topic": "queue",
-        "p" : 7 
+        "min": 0,
+        "max": 1300,
+        "p": 7,
+        "subtopics": [
+            {
+                "name": "Queue Basics and Terminology",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Array-based Implementation",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Linked List-based Implementation",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Circular Queue",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Double Ended Queue (Deque)",
+                "min": 0,
+                "max": 1300
+            }
+        ]
     },
     {
-        "min": 1200,
-        "max": 1400,
         "topic": "stack",
-        "p" : 7 
+        "min": 0,
+        "max": 1300,
+        "p": 7,
+        "subtopics": [
+            {
+                "name": "Stack Basics and Terminology",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Array-based Implementation",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Linked List-based Implementation",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Stack Operations (Push, Pop, Peek)",
+                "min": 0,
+                "max": 1300
+            },
+            {
+                "name": "Advanced Stack Variants (Min Stack, etc.)",
+                "min": 1300,
+                "max": 1500
+            }
+        ]
     },
     {
-        "min": 1300,
-        "max": 1400,
         "topic": "heap",
-        "p" : 5 
-    },
-    {
-        "min": 1200,
-        "max": 1500,
-        "topic": "breadh-first-search", 
-        "p" : 7
-    },
-    {
-        "min": 1200,
-        "max": 1500,
-        "topic": "depth-first-search",
-        "p" : 7 
-    },
-    {
-        "min": 1500,
-        "max": 2000,
-        "topic": "game-theory",
-        "p" : 10
-    },
-    {
-        "min": 1500,
-        "max": 1700,
-        "topic": "number-theory",
-        "p" : 20 
-    },
-    {
-        "min": 1500,
-        "max": 1700,
-        "topic": "counting",
-        "p" : 7 
-    },
-    {
-        "min": 1500,
-        "max": 1700,
-        "topic": "combinatorics",
-        "p" : 15 
-    },
-    {
-        "min": 1500,
-        "max": 1700,
-        "topic": "geometry",
-        "p" : 15 
-    },
-    {
-        "min": 1200,
+        "min": 0,
         "max": 1400,
-        "topic": "shortest-path",
-        "p" : 10
+        "p": 5,
+        "subtopics": [
+            {
+                "name": "Heap Basics and Terminology",
+                "min": 0,
+                "max": 1400
+            },
+            {
+                "name": "Binary Heap Structure",
+                "min": 0,
+                "max": 1400
+            },
+            {
+                "name": "Heap Operations (Insertion, Deletion, Heapify)",
+                "min": 0,
+                "max": 1400
+            },
+            {
+                "name": "Heap Variants (Min Heap, Max Heap)",
+                "min": 0,
+                "max": 1400
+            }
+        ]
     },
     {
-        "min": 1700,
-        "max": 2300,
-        "topic": "monotonic-stack",
-        "p" : 10 
-    },
-    {
-        "min": 1700,
-        "max": 2300,
-        "topic": "monotonic-queue",
-        "p" : 10 
-    },
-    {
-        "min": 1200,
-        "max": 1700,
-        "topic": "union-find",
-        "p" : 15 
-    },
-    {
-        "min": 1700,
-        "max": 2300,
-        "topic": "rolling-hash",
-        "p" : 7
-    },
-    {
-        "min": 1700,
-        "max": 2300,
-        "topic": "segment-tree",
-        "p" : 7
-    },
-    {
-        "min": 1700,
-        "max": 2300,
-        "topic": "fenwick-tree",
-        "p" : 7
-    },
-    {
-        "min": 1500,
-        "max": 3000,
         "topic": "dynamic-programming",
-        "p" : 25
-    }
+        "min": 1500,
+        "max": 5000,
+        "p": 25,
+        "subtopics": [
+            {
+                "name": "Introduction to Dynamic Programming",
+                "min": 1500,
+                "max": 5000
+            },
+            {
+                "name": "Memoization vs Tabulation",
+                "min": 1500,
+                "max": 5000
+            },
+            {
+                "name": "Longest Increasing Subsequence",
+                "min": 1500,
+                "max": 5000
+            },
+            {
+                "name": "Knapsack Problem",
+                "min": 1500,
+                "max": 5000
+            },
+            {
+                "name": "DP on Trees",
+                "min": 1500,
+                "max": 5000
+            },
+            {
+                "name": "DP with Bitmasking",
+                "min": 1500,
+                "max": 5000
+            },
+            {
+                "name": "Sequence Alignment",
+                "min": 1500,
+                "max": 5000
+            }
+        ]
+    },
+    {
+        "topic": "graph",
+        "min": 1200,
+        "max": 2200,
+        "p": 10,
+        "subtopics": [
+            {
+                "name": "Graph Representation",
+                "min": 1200,
+                "max": 1600
+            },
+            {
+                "name": "Breadth First Search (BFS)",
+                "min": 1200,
+                "max": 1600
+            },
+            {
+                "name": "Depth First Search (DFS)",
+                "min": 1200,
+                "max": 1600
+            },
+            {
+                "name": "Shortest Path Algorithms",
+                "min": 1400,
+                "max": 1800
+            },
+            {
+                "name": "Minimum Spanning Trees",
+                "min": 1400,
+                "max": 1800
+            },
+            {
+                "name": "Network Flow Algorithms",
+                "min": 1800,
+                "max": 2200
+            }
+        ]
+    },    
+    {
+        "topic": "segment-tree",
+        "min": 1700,
+        "max": 2300,
+        "subtopics": [
+            {"name": "range-sum-query", "min": 1700, "max": 2200},
+            {"name": "range-max-query", "min": 1700, "max": 2200},
+            {"name": "range-min-query", "min": 1700, "max": 2200},
+            {"name": "lazy-propagation", "min": 1800, "max": 2300}
+        ],
+        "p": 7
+    },
+    {
+        "topic": "fenwick-tree",
+        "min": 1700,
+        "max": 2300,
+        "subtopics": [
+            {"name": "point-update", "min": 1700, "max": 2200},
+            {"name": "range-update", "min": 1800, "max": 2300}
+        ],
+        "p": 7
+    },
+    {
+        "topic": "rolling-hash",
+        "min": 1700,
+        "max": 2300,
+        "p": 7,
+        "subtopics": [
+            {
+                "name": "Introduction to Rolling Hash",
+                "min": 1700,
+                "max": 2300
+            },
+            {
+                "name": "Polynomial Hashing",
+                "min": 1700,
+                "max": 2300
+            },
+            {
+                "name": "Rabin-Karp Algorithm",
+                "min": 1700,
+                "max": 2300
+            },
+            {
+                "name": "Handling Collisions in Hashing",
+                "min": 1700,
+                "max": 2300
+            },
+            {
+                "name": "Hashing for String Matching",
+                "min": 1700,
+                "max": 2300
+            },
+            {
+                "name": "Double Hashing Techniques",
+                "min": 1700,
+                "max": 2300
+            },
+            {
+                "name": "Rolling Hash Applications in CP",
+                "min": 1700,
+                "max": 2300
+            }
+        ]
+    },
+    {
+        "topic": "number-theory",
+        "min": 1500,
+        "max": 2300,
+        "p": 7,
+        "subtopics": [
+            {
+                "name": "Basic Number Theory Concepts",
+                "min": 1500,
+                "max": 2300
+            },
+            {
+                "name": "Greatest Common Divisor (GCD) and LCM",
+                "min": 1500,
+                "max": 2300
+            },
+            {
+                "name": "Modular Arithmetic",
+                "min": 1500,
+                "max": 2300
+            },
+            {
+                "name": "Fermat’s Theorem & Euler’s Totient Function",
+                "min": 1500,
+                "max": 2300
+            },
+            {
+                "name": "Prime Factorization and Sieve of Eratosthenes",
+                "min": 1500,
+                "max": 2300
+            },
+            {
+                "name": "Chinese Remainder Theorem",
+                "min": 1500,
+                "max": 2300
+            },
+            {
+                "name": "Number Theory in Cryptography",
+                "min": 1500,
+                "max": 2300
+            }
+        ]
+    },
+    {
+        "topic": "game-theory",
+        "min": 1600,
+        "max": 2300,
+        "p": 7,
+        "subtopics": [
+            {
+                "name": "Introduction to Game Theory",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Nim Game and Grundy Numbers",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Sprague-Grundy Theorem",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Impartial vs Partisan Games",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Minimax Algorithm",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Dynamic Programming in Game Theory",
+                "min": 1600,
+                "max": 2300
+            },
+            {
+                "name": "Game Theory in Competitive Programming",
+                "min": 1600,
+                "max": 2300
+            }
+        ]
+    }    
 ]
