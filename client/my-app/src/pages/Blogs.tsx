@@ -3,8 +3,11 @@ import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import Hole from '../components/hole';
+import MiniHole from '../components/MiniHole';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { Bot, WandSparkles } from 'lucide-react';
+import '../index.css'
 interface BlogContent {
     title?: string;
     content: string;
@@ -29,6 +32,9 @@ const Blogs = () => {
     const {slug} = useParams();
     const nodeBase = `https://codeassist-q2nt.onrender.com/blogs/fetch`
     const [blog, setBlog] = useState<Blog | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [doubt, setDoubt] = useState('');
+    const [output, setOutput] = useState('');
     useEffect(()=>{
         (async()=>{
             try{
@@ -39,6 +45,21 @@ const Blogs = () => {
             }
         })()
     }, []);
+    const askDoubt = async()=>{
+        try{
+            let blogContent = '';
+            setLoading(true);
+            blog?.content.forEach((bb)=>{
+                if(bb?.content === null) return;
+                blogContent += bb?.content
+            })
+            let response = await axios.post(`https://codeassist-q2nt.onrender.com/blogs/askEcho`, {blogContent, doubt});
+            setOutput(response.data.data);
+            setLoading(false);
+        } catch(err){
+
+        }
+    }
     if(blog === null){
         return <Hole/>
     }
@@ -64,6 +85,32 @@ const Blogs = () => {
                         </div>
                     })    
                 }</div>
+                <div className='card py-2 px-4 rounded-lg my-8 w-[85%] min-w-[320px] mx-auto p-4'>
+                    <div className='text-2xl py-2 text-gray-100 font-semibold flex flex-row items-center gap-2'>Having Doubts? Ask <div className="bg-[#319dce]/30 px-4 py-1 rounded-full text-white font-semibold cursor-pointer gap-2 flex flex-row items-center"> <Bot/> Echo</div></div>
+                    <div>
+                        {
+                            loading && <MiniHole/>
+                        }
+                        {
+                            !loading && output !== '' && <div>{output}</div>
+                        }
+                    </div>
+                    <textarea
+                        className='w-full p-2 text-white bg-transparent backdrop-blur-md rounded-md border focus:outline-none'
+                        rows={4}
+                        placeholder='Type your doubt here...'
+                        value={doubt}
+                        onChange={(e) => setDoubt(e.target.value)}
+                    ></textarea>
+                    <button
+                        className='button text-white'
+                        onClick={async()=>{
+                            await askDoubt()
+                        }}
+                    >
+                        <span className='flex flex-row items-center justify-center gap-4 text-md'>Try Out <WandSparkles/></span>
+                    </button>
+                 </div>
                 {
                     blog.code &&
                     <div className='my-8 w-[85%] min-w-[320px] mx-auto'>
