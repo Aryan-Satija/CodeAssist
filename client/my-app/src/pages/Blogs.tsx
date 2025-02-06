@@ -1,12 +1,12 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { toast } from 'react-toastify';
 import Hole from '../components/hole';
 import MiniHole from '../components/MiniHole';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Bot, WandSparkles } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import '../index.css'
 interface BlogContent {
     title?: string;
@@ -85,31 +85,33 @@ const Blogs = () => {
                         </div>
                     })    
                 }</div>
-                <div className='card py-2 px-4 rounded-lg my-8 w-[85%] min-w-[320px] mx-auto p-4'>
+                <div className='card py-2 px-4 rounded-lg my-8 w-[85%] min-w-[320px] mx-auto p-4 flex flex-col items-start justify-between gap-4'>
                     <div className='text-2xl py-2 text-gray-100 font-semibold flex flex-row items-center gap-2'>Having Doubts? Ask <div className="bg-[#319dce]/30 px-4 py-1 rounded-full text-white font-semibold cursor-pointer gap-2 flex flex-row items-center"> <Bot/> Echo</div></div>
-                    <div>
+                    <div className='w-full items-center'>
                         {
                             loading && <MiniHole/>
                         }
                         {
-                            !loading && output !== '' && <div>{output}</div>
+                            !loading && output !== '' && <ReactMarkdown>{output}</ReactMarkdown>
                         }
                     </div>
-                    <textarea
-                        className='w-full p-2 text-white bg-transparent backdrop-blur-md rounded-md border focus:outline-none'
-                        rows={4}
-                        placeholder='Type your doubt here...'
-                        value={doubt}
-                        onChange={(e) => setDoubt(e.target.value)}
-                    ></textarea>
-                    <button
-                        className='button text-white'
-                        onClick={async()=>{
-                            await askDoubt()
-                        }}
-                    >
-                        <span className='flex flex-row items-center justify-center gap-4 text-md'>Try Out <WandSparkles/></span>
-                    </button>
+                    <div className='flex flex-row items-center gap-2 w-full'>
+                        <input
+                            className='p-2 w-full text-white bg-transparent backdrop-blur-md rounded-md border focus:outline-none'
+                            type='text'
+                            placeholder='Type your doubt here✨✨'
+                            value={doubt}
+                            onChange={(e) => setDoubt(e.target.value)}
+                        ></input>
+                        <button
+                            className='button text-white w-[120px]'
+                            onClick={async()=>{
+                                await askDoubt()
+                            }}
+                        >
+                            <span className='flex flex-row items-center justify-center gap-4 text-md'>Try Out <WandSparkles/></span>
+                        </button>
+                    </div>
                  </div>
                 {
                     blog.code &&
