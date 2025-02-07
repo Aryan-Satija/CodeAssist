@@ -48,8 +48,8 @@ const LoginPage = () => {
 
   return (
     <div className="relative">
-      <div className='bg-[#1e8296] absolute top-[8rem] -z-5 left-[-15rem] h-[15.25rem] w-[15.25rem] rounded-full blur-[10rem] sm:w-[48.75rem]'></div>
-      <div className="h-screen bg-[#11192D] w-[100vw] flex flex-col justify-center items-center">
+      {/* <div className='bg-[#1e8296] absolute top-[8rem] -z-5 left-[-15rem] h-[15.25rem] w-[15.25rem] rounded-full blur-[10rem] sm:w-[48.75rem]'></div> */}
+      <div className="h-screen card-sharp w-[100vw] flex flex-col justify-center items-center">
         {
           submitted && 
           <ConfettiExplosion/>
@@ -90,7 +90,7 @@ const LoginPage = () => {
             <div>
               <button
                   type="submit"
-                  className="buttonlight"
+                  className="button"
               >
                 <span className="">
                   Login
