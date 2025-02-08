@@ -88,7 +88,7 @@ def predict_eq(request):
     mem = json.loads(request.body).get('mem')
     rsn = json.loads(request.body).get('rsn')
     pbm = json.loads(request.body).get('pbm')
-    score = 0.7*lc + 0.2*cf + 0.1*pbm + dbg*20 + mem*10 + rsn*25
+    score = 0.7*cf + 0.2*lc + 0.1*pbm + dbg*20 + mem*10 + rsn*25
     return JsonResponse({'score': score})
 
 def rating(request, handle_name):

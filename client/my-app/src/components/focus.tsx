@@ -6,6 +6,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 import SpaceWarp from './spaceWrap';
 import StarField from './starField';
 import NebulaMist from './NebulaMist';
+import SpiralGalaxy from './spiral';
 import { ConfigProvider } from 'antd';
 
 const darkTheme = {
@@ -13,6 +14,21 @@ const darkTheme = {
     colorBgElevated: 'black',
     colorText: 'white',
   },
+};
+const lightTheme = {
+  token: {
+    colorBgElevated: 'white',
+    colorText: 'black',
+  },
+};
+
+const useCircadianTheme = () => {
+  const [theme, setTheme] = useState(() => {
+    const hour = new Date().getHours();
+    return hour >= 6 && hour < 18 ? lightTheme : darkTheme;
+  });
+
+  return theme;
 };
 
 const Focus = () => {
@@ -52,6 +68,7 @@ const Focus = () => {
     console.log('Clicked cancel button');
     setOpen(false);
   };
+  const theme = useCircadianTheme();
 
   return (
     <>
@@ -72,7 +89,7 @@ const Focus = () => {
           </Tooltip.Portal>
         </Tooltip.Root>
       </Tooltip.Provider>
-      <ConfigProvider theme={darkTheme}>
+      <ConfigProvider theme={theme}>
         <Modal
           title="Focus Mode"
           open={open}
@@ -100,7 +117,7 @@ const Focus = () => {
             }
             {
                 mode === 2 &&
-                <StarField />
+                <SpiralGalaxy />
             }
           </Canvas>
             <div style={{
