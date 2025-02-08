@@ -26,7 +26,7 @@ If users get stuck, **Echo** suggests:
 - Text vectorization is performed on **2500+ problems** from various platforms.
 - **Cosine similarity** is used to find the closest vector to the input query.
 - Echo provides context-aware recommendations to help users solve problems efficiently.
-- 
+
 ### 🔹 Circadian Rhythm-Based Scheduling
 - Adapts problem scheduling to a user’s **biological clock**:
   - **Mornings:** Memory-intensive tasks.
