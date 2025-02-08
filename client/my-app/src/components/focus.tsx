@@ -32,10 +32,12 @@ const useCircadianTheme = () => {
 };
 
 const Focus = () => {
+  const modetype = [0, 1, 2]
+  const hour = new Date().getHours();
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [audio] = useState(new Audio('/music/suspense-slow.mp3')); 
-  const [mode, setMode] = useState<number>(0);
+  const [mode, setMode] = useState<number>(modetype[hour%3]);
   const increment = ()=>{
     setMode((mode+1)%3);
   } 
@@ -68,7 +70,7 @@ const Focus = () => {
     console.log('Clicked cancel button');
     setOpen(false);
   };
-  const theme = useCircadianTheme();
+  
 
   return (
     <>
@@ -89,7 +91,7 @@ const Focus = () => {
           </Tooltip.Portal>
         </Tooltip.Root>
       </Tooltip.Provider>
-      <ConfigProvider theme={theme}>
+      <ConfigProvider theme={darkTheme}>
         <Modal
           title="Focus Mode"
           open={open}

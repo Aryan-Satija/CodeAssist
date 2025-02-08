@@ -16,7 +16,7 @@ const SpaceWarp: React.FC = () => {
       positions[i3 + 1] = (Math.random() - 0.5) * 100;
       positions[i3 + 2] = Math.random() * -50;
 
-      colors[i3] = colors[i3 + 1] = colors[i3 + 2] = 1; // White color
+      colors[i3] = colors[i3 + 1] = colors[i3 + 2] = 1;
     }
 
     return [positions, colors];
