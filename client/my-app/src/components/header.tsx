@@ -151,7 +151,7 @@ const Header = ({setChat, setMode, setText, setPlaceholder, setSession}: props) 
           </Tooltip.Provider>
         </div>
         <div className="hidden md:block hover:scale-125 duration-200">
-            <Read rating={rating}/>
+            <Read rating={rating} step={user ? user.step : 0}/>
         </div>
         <div className="hidden md:block hover:scale-125 duration-200">
           <Tooltip.Provider>
