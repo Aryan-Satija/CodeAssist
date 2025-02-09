@@ -2,6 +2,7 @@ const Blogs = require('../models/Blogs.js');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config();
 const gemini = process.env.GOOGLE_API;
+const youtube = process.env.YOUTUBE_API;
 exports.fetchBlogs = async(req, res)=>{
     try{
         const tpc = req.params.topic;
@@ -70,6 +71,40 @@ exports.clearDoubt = async(req, res)=>{
         return res.status(500).json({
             success: false,
             message: 'Something Went Wrong'
+        })
+    }
+}
+
+exports.visualMaterial = async(req, res)=>{
+    try{
+        const {tags} = req.body;
+        if(!tags || tags.length == 0){
+            return res.status(400).json({
+                success: false,
+                message: 'Tags are required'
+            });
+        }
+        const query = tags.join(' ');
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtube}&q=${encodeURIComponent(query)}&part=snippet&type=video&maxResults=5`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const videos = data.items.map(item => ({
+            title: item.snippet.title,
+            videoId: item.id.videoId,
+            thumbnail: item.snippet.thumbnails.medium.url,
+            channelTitle: item.snippet.channelTitle,
+            url: `https://www.youtube.com/watch?v=${item.id.videoId}`
+        }));
+        return res.status(200).json({
+            success: true,
+            message: 'Videos fetched successfully',
+            videos
+        });
+    } catch(err){
+        console.log(err);
+        return res.status(500).json({
+            success: false,
+            message: 'Something went wrong'
         })
     }
 }
