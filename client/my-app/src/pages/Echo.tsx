@@ -20,10 +20,10 @@ const Echo = () => {
     const [placeholder, setPlaceholder] = useState<string>("");
     const [isLoading, setIsloading] = useState<Boolean>(false);
     const [loading, setLoading] = useState<number>(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     if(play === 'true'){
         return <EchoGames/>
     }
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
       setIsModalOpen(true);
@@ -53,7 +53,7 @@ const Echo = () => {
                         <div className='text-md text-center flex flex-row items-center justify-center gap-4'>
                             <div>New here?</div>
                             <div>
-                                <button className="cursor-pointer bg-blue-100 px-4 py-2 rounded-md text-[#0e444e]" onClick={showModal}>Watch <MonitorPlay/></button>
+                                <button className="cursor-pointer bg-blue-100 flex flex-row items-center justify-center gap-2 px-4 py-2 rounded-md text-[#0e444e]" onClick={showModal}>Watch <MonitorPlay/></button>
                             </div>
                         </div>
                         <Modal title="Watch Video" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} centered>
