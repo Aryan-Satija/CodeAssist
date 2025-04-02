@@ -189,7 +189,7 @@ button {
 	position: relative;
 	text-decoration: none;
 	color: #fff;
-	background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(90deg, rgba(38,32,87,1) 35%, rgba(48,43,99,1) 70%, rgba(32,32,78,1) 100%);
 }
 
 
