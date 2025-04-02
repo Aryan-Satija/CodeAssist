@@ -44,6 +44,7 @@ const RegisterPage: React.FC = () => {
       const response = await axios.post(`${base}/auth/signup`, formData)
       toast.update(id, {render: "Task successful", type: "success", isLoading: false, autoClose: 3000})
       setSubmitted(true)
+      
       setTimeout(()=>{
         navigate('/login');
       }, 5000)
