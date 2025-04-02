@@ -4,6 +4,8 @@ import ConfettiExplosion from "../components/background";
 import { toast } from 'react-toastify';
 import "../index.css"
 import { useNavigate } from "react-router-dom";
+import { Steps, Watermark } from "antd";
+
 interface FormData {
   email: string;
   password: string;
@@ -11,6 +13,7 @@ interface FormData {
 const LoginPage = () => {
   const navigate = useNavigate();
   const base = "https://codeassist-q2nt.onrender.com"
+  const [step, setStep] = useState(1)
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: ""
@@ -33,6 +36,7 @@ const LoginPage = () => {
       localStorage.setItem("user", JSON.stringify(response.data.user));
       toast.update(id, {render: "Task successful", type: "success", isLoading: false, autoClose: 3000});
       setSubmitted(true);
+      setStep(step+1)
       setTimeout(()=>{
         navigate("/echo");
       }, 5000);
@@ -47,6 +51,8 @@ const LoginPage = () => {
   };
 
   return (
+    <Watermark content="CodeAssist">
+
     <div className="relative">
       {/* <div className='bg-[#1e8296] absolute top-[8rem] -z-5 left-[-15rem] h-[15.25rem] w-[15.25rem] rounded-full blur-[10rem] sm:w-[48.75rem]'></div> */}
       <div className="h-screen card-sharp w-[100vw] flex flex-col justify-center items-center">
@@ -54,7 +60,20 @@ const LoginPage = () => {
           submitted && 
           <ConfettiExplosion/>
         }
-        <div className="w-[320px] md:w-[448px] bg-transparent backdrop-blur-lg p-6 rounded-lg shadow-lg shadow-slate-700">
+        <div className="w-[320px] md:w-[648px] bg-transparent backdrop-blur-lg p-16 rounded-lg shadow-lg shadow-slate-700">
+          <div className="py-8">
+            <Steps
+              current={step}
+              items={[
+                {
+                  title: step == 1 ? 'In Progress' : 'Finished',
+                },
+                {
+                  title: 'Waiting',
+                },
+              ]}
+              />
+          </div>
           <h2 className="text-2xl font-bold text-gray-100 mb-6 text-center">
             Login
           </h2>
@@ -71,7 +90,7 @@ const LoginPage = () => {
                 required
                 className="mt-1 block w-full px-4 py-2 bg-[#1e8296]/30 border-[1px] border-[#0e444e] rounded-md shadow-sm focus:outline-none text-slate-200"
                 autoComplete="none"
-              />
+                />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-100">
@@ -90,7 +109,7 @@ const LoginPage = () => {
             <div>
               <button
                   type="submit"
-                  className="button"
+                  className="cursor-pointer bg-blue-100 px-4 py-2 rounded-md text-[#0e444e] mt-6"
               >
                 <span className="">
                   Login
@@ -101,6 +120,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
+    </Watermark>
   );
 }
 
