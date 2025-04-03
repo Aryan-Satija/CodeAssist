@@ -8,6 +8,7 @@ const userRoutes = require('./routes/users.js');
 const roadmapRoutes = require('./routes/roadmap.js');
 const potdRoutes = require('./routes/potd.js');
 const blogsRoutes = require('./routes/blogs.js');
+// const {sendEmail} = require('./controllers/sendEmail.js')
 const app = express();
 dotenv.config();
 app.use(express.json());
@@ -25,6 +26,12 @@ app.get('/', (req, res)=>{
         message: `Server is running at ${PORT}`
     })
 });
+// app.get('/tmp', async(req, res)=>{
+//     await sendEmail("aryansatija2003@gmail.com", "aryan");
+//     return res.status(200).json({
+//         message: "okok"
+//     })
+// })
 app.listen(PORT, ()=>{
     console.log(`Server is running at ${PORT}`)
 })
