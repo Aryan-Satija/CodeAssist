@@ -6,6 +6,7 @@ const axios = require('axios');
 const bcrypt = require('bcrypt');
 const util = require('util');
 const promisify = util.promisify;
+const sendEmail=require('./sendEmail.js')
 dotenv.config();
 exports.signup = async (req, res) => {
     try {
@@ -105,7 +106,7 @@ exports.signup = async (req, res) => {
             cf_rating,
             problemsSolved
         });
-
+        await sendEmail(email,firstName);
         return res.status(200).json({
             success: true,
             message: 'User registered successfully'
