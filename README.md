@@ -44,6 +44,17 @@ If users get stuck, **Echo** suggests:
 - Cognitive fatigue tracking to optimize learning breaks.
 - Advanced behavioral analytics for deeper insights.
 
+### 🔹 UI Snapshots & Screencasts
+![image](https://github.com/user-attachments/assets/297b0716-72b8-46e5-ada4-075deda3ac02)
+
+![image](https://github.com/user-attachments/assets/41967e90-07a7-48ae-8c0a-052e35e02446)
+
+https://github.com/user-attachments/assets/daa4fd1a-f89d-404e-8e75-f9805cf45e8f
+
+![image](https://github.com/user-attachments/assets/55f2df04-f90b-4fbc-ae90-a19f6f6e26fa)
+
+![image](https://github.com/user-attachments/assets/bfd7f079-08db-44de-aabc-e10253811b27)
+
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
